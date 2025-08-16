@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Invitation</title>
+  <meta name="theme-color" content="#9c0b0b" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Persistent Audio (starts after user taps Enter) -->
+  <audio id="bg-audio" loop preload="auto">
+    <!-- Put your file at /assets/your-song.mp3 -->
+    <source src="assets/invitation-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Entry Gate (for autoplay permission + vibe) -->
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="crest">
+        <span class="crest-left"></span>
+        <span class="crest-letter">ΛSWAD & BALQIS</span>
+        <span class="crest-right"></span>
+      </div>
+      <h1 class="gate-title">ANDA DIUNDANG</h1>
+      <p class="gate-sub">22 NOVEMBER 2025</p>
+      <button id="enter-btn" class="btn btn-gold">MASUK</button>
+      <p class="gate-note">DEWAN LAKIS , SIBU ,SARAWAK</p>
+    </div>
+  </div>
+
+  <!-- Top Nav -->
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a href="#home" class="brand">ASWAD & BALQIS</a>
+      <button id="audio-toggle" class="icon-btn" aria-label="Toggle music" title="Toggle music">♫</button>
+      <div class="links">
+        <a href="#home" data-route>Home</a>
+        <a href="#hosts" data-route>Hubungi</a>
+        <a href="#details" data-route>Details</a>
+        <a href="#gallery" data-route>Gallery</a>
+        <a href="#rsvp" data-route>RSVP</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Gold Particles (subtle luxe) -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- "Pages" -->
+  <main id="app">
+    <!-- 1. HOME -->
+    <section id="home" class="page page-active">
+      <div class="hero">
+        <h2 class="overline">BERSATU TAAT SETIA</h2>
+        <h1 class="display">ASWAD 
+            & BALQIS</h1>
+        <p class="lead">MAJLIS PERNIKAHAN</p>
+        <a href="#rsvp" data-route class="btn btn-gold">RSVP Now</a>
+      </div>
+    </section>
+
+    <!-- 2. HOSTS -->
+    <section id="hosts" class="page">
+      <div class="card">
+        <h2 class="section-title">HUBUNGI JIKA TERDAPAT SEBARANG PERTANYAAN</h2>
+        <div class="hosts">
+          <div class="host">
+            <div class="badge">MUHAMMAD NAUFAL</div>
+            <p>+60126019386</p>
+          </div>
+                    <div class="host">
+            <div class="badge">ABDUL LATIP</div>
+            <p>+60198892056</p>
+          </div>
+        </div>
+      </div>
+        </section>
+      
+    <!-- 3. DETAILS -->
+    <section id="details" class="page">
+      <div class="card">
+        <h2 class="section-title">Details</h2>
+        <div class="grid-2">
+          <div>
+            <h4>Tarikh & Masa</h4>
+            <p>22 November 2025 / 2 Jamadilakhir 1447H<br>9:00 AM – Selesai</p>
+          </div>
+          <div>
+            <h4>Venue</h4>
+            <p>Jalan Masjid, Pekan Sibu, 96000 Sibu, Sarawak<br>Dress Code: Baju yang sopan.</p>
+          </div>
+          <div>
+            <h4>Schedule</h4>
+            <ul class="ticks">
+              <li>Arrival & Aperitif</li>
+              <li>Formal Welcome</li>
+              <li>Live Quintet & Toast</li>
+              <li>Private Supper</li>
+              <li>After‑hours Lounge</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Notes</h4>
+            <ul class="ticks">
+              <li>Invitation only. No plus-ones without approval.</li>
+              <li>Photography discouraged during dinner.</li>
+              <li>Valet available.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GALLERY -->
+    <section id="gallery" class="page">
+      <div class="card">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+          <!-- Replace placeholders with your images -->
+          <figure><img src="assets/photo-1.jpg" alt="Venue ambience"></figure>
+          <figure><img src="assets/photo-2.jpg" alt="Gold details"></figure>
+          <figure><img src="assets/photo-3.jpg" alt="Table setting"></figure>
+          <figure><img src="assets/photo-4.jpg" alt="Live music"></figure>
+          <figure><img src="assets/photo-5.jpg" alt="Entrance hall"></figure>
+          <figure><img src="assets/photo-6.jpg" alt="Black & gold theme"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RSVP -->
+    <section id="rsvp" class="page">
+      <div class="card">
+        <h2 class="section-title">RSVP</h2>
+        <form id="rsvp-form" class="form" autocomplete="on">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@email.com" />
+          </div>
+          <div class="field">
+            <label for="attend">Attendance</label>
+            <select id="attend" name="attend" required>
+              <option value="">Select…</option>
+              <option value="Yes">Accept with pleasure</option>
+              <option value="No">Regretfully decline</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="notes">Notes (dietary, etc.)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know?"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-gold">Send RSVP</button>
+            <span id="form-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+        <p class="privacy">We respect discretion. Your details are kept strictly confidential.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> ASWAD & BALQIS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
